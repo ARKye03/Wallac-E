@@ -622,10 +622,6 @@ video {
   resize: none;
 }
 
-.resize-y {
-  resize: vertical;
-}
-
 .flex-col {
   flex-direction: column;
 }
