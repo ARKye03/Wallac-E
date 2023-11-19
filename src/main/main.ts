@@ -12,6 +12,7 @@ import path from 'path';
 import { app, BrowserWindow, shell, ipcMain } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
+import { spawn } from 'child_process';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
 
@@ -123,10 +124,13 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
-
+function StartBackend() {
+  spawn('dotnet', ['run', '--project', 'GraphEngine']);
+}
 app
   .whenReady()
   .then(() => {
+    StartBackend();
     createWindow();
     app.on('activate', () => {
       // On macOS it's common to re-create a window in the app when the
