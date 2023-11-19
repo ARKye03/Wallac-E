@@ -27,8 +27,11 @@ const Hulk: React.FC = () => {
           },
         },
       );
-      const data = await response.text();
-      return data;
+      if (response.ok) {
+        const data = await response.text();
+        return data;
+      }
+      throw new Error('Network response was not ok.');
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('Failed to fetch data:', error);
@@ -42,9 +45,13 @@ const Hulk: React.FC = () => {
       if (text.startsWith('> ')) {
         expression = text.slice(2); // Remove '> ' from the start of the text
       }
-      const result = await fetchData(expression);
-      setExpressions((prevExpressions) => [...prevExpressions, text, result]);
-      setText('> ');
+      try {
+        const result = await fetchData(expression);
+        setExpressions((prevExpressions) => [...prevExpressions, text, result]);
+        setText('> ');
+      } catch (err) {
+        // console.error(err);
+      }
     }
   };
 
