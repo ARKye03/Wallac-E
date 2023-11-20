@@ -56,8 +56,8 @@ const Hulk: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col h-screen justify-between mt-6">
-      <div className="flex-col overflow-auto p-4 scroll-smooth max-w-4xl scrollbar-hide">
+    <div className="ml-16 flex flex-col justify-between h-screen mt-6">
+      <div className="text-lg flex-1 justify-between flex-col overflow-auto p-4 scroll-smooth max-w-4xl scrollbar-hide">
         {expressions.map((expression, index, arr) => {
           if (index % 2 === 0) {
             return (
@@ -66,8 +66,8 @@ const Hulk: React.FC = () => {
                 key={index}
                 className={`p-2 cursor-default rounded transition-colors duration-200 ${
                   index % 4 === 0
-                    ? 'text-slate-400 hover:bg-slate-500'
-                    : 'text-white hover:bg-slate-600'
+                    ? 'text-slate-400 hover:bg-slate-600'
+                    : 'text-white hover:bg-slate-700'
                 }`}
               >
                 <p>{expression}</p>
@@ -83,7 +83,7 @@ const Hulk: React.FC = () => {
           value={text}
           onChange={handleChange}
           onKeyPress={handleKeyPress}
-          className="text-white w-[750px] items-center flex rounded-lg resize-none min-h-[48px] bg-[#363a4f] hover:bg-slate-600 transition duration-200 px-2 py-2 focus:outline-none"
+          className="text-white w-[80vw] md:w-[60vw] items-center flex rounded-lg resize-none min-h-[48px] bg-[#363a4f] hover:bg-slate-600 transition duration-200 px-2 py-2 focus:outline-none"
           placeholder="Send some expressions"
         />
       </div>
