@@ -83,7 +83,7 @@ const Hulk: React.FC = () => {
           value={text}
           onChange={handleChange}
           onKeyPress={handleKeyPress}
-          className="text-white w-[80vw] md:w-[60vw] items-center flex rounded-lg resize-none min-h-[48px] bg-[#363a4f] hover:bg-slate-600 transition duration-200 px-2 py-2 focus:outline-none"
+          className="text-white w-[80vw] md:w-[60vw] items-center flex rounded-lg resize-none min-h-[48px] bg-Surface0 hover:bg-slate-600 transition duration-200 px-2 py-2 focus:outline-none"
           placeholder="Send some expressions"
         />
       </div>

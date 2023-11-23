@@ -3,7 +3,7 @@ import { GithubIcon, GraphIcon, HomeIcon, HulkIcon } from './svgicons';
 
 function Sidebar() {
   return (
-    <div className="bg-[#494d64] h-screen flex flex-col items-center gap-8">
+    <div className="bg-Surface1 h-screen flex flex-col items-center gap-8">
       <SidebarButton href="/">
         <HomeIcon />
       </SidebarButton>

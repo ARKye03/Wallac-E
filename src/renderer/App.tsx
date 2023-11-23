@@ -8,7 +8,7 @@ import Hulk from './Hulk';
 function Hello() {
   return (
     <div className="relative top-0 flex-col justify-center text-center">
-      <h1 className="text-5xl hover:text-blue-300 cursor-default transition duration-300">
+      <h1 className="text-5xl hover:text-Sapphire cursor-default transition duration-300">
         Welcome to Wallace
       </h1>
       Here lies the Hulk and the Wall-E
